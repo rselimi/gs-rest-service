@@ -16,7 +16,7 @@ public class NotificationsController {
         return requests;
     }
 
-    @RequestMapping(value = "/notifications/{id}", method = RequestMethod.GET, consumes = "application/json", produces = "application/text")
+    @RequestMapping(value = "/notifications/{id}", method = RequestMethod.GET, produces = "application/json")
     public Object getNotification(@PathVariable String id) {
         return requests.get(id);
     }
@@ -34,7 +34,6 @@ public class NotificationsController {
         final int pspReferenceValueIndex = pspReferenceIndex + "pspReference=".length();
         final String pspReferenceValue = notificationAsString.substring(pspReferenceValueIndex, pspReferenceValueIndex + 16);
 
-        System.out.println(pspReferenceValue);
         requests.put(pspReferenceValue, body);
 
         return "[accepted]";
