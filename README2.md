@@ -21,9 +21,12 @@ The only endpoint is:
 
 POST /notifications
 - Body: Notification from smartpay
+
 GET /notifications
 - Returns all stored notifications
+
 GET /notifications/{pspReference}
 - Returns the notification related to the pspReference
+
 DELETE /notifications
 - Deletes all the notifications 
